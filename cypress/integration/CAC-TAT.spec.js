@@ -124,9 +124,14 @@ describe('Central de Atendimento ao Cliente TAT', function() {
 
 
     //pegando arquivo
-    it.only('seleciona um arquivo utilizando uma fixture para a qual foi dada um alias', () => {
+    it('seleciona um arquivo utilizando uma fixture para a qual foi dada um alias', () => {
         cy.fixture("example").as('sampleFile')
         cy.get('input[type="file"]').selectFile('@sampleFile')
+    });
+
+    //verificando abrindo link em outra guia
+    it.only('verifica que a política de privacidade abre em outra aba sem a necessidade de um clique', () => {
+        cy.get('#privacy a').should('have.attr', 'target', '_blank')
     });
 
 
