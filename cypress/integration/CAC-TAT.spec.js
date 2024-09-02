@@ -135,7 +135,7 @@ describe('Central de Atendimento ao Cliente TAT', function() {
     });
 
     //acessando a pagina removendo o tanget e clicando no link assim podendo usar ele no cypress
-    it.only('acessa a página da política de privacidade removendo o target e então clicando no link', () => {
+    it('acessa a página da política de privacidade removendo o target e então clicando no link', () => {
         cy.get('#privacy a')
         .invoke('removeAttr', 'target')
         .click()
